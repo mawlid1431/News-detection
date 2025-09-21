@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accurify - AI-Powered News Verification</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/enhanced_style.css') }}">
+</head>
+<body>
+    <!-- Minimal Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">🎯 Accurify</div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#api">API</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section - Fixed Height -->
+    <section class="hero" id="home">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="gradient-text">AI-Powered</span><br>
+                News Verification
+            </h1>
+            <p class="hero-subtitle">
+                Instantly verify news authenticity with AI. Get summaries from trusted sources.
+            </p>
+            
+            <!-- Search Interface -->
+            <div class="search-container">
+                <div class="search-box">
+                    <input 
+                        type="text" 
+                        id="newsInput" 
+                        placeholder="Enter news headline or paste article URL..."
+                        class="search-input"
+                    >
+                    <button id="verifyBtn" class="verify-btn">
+                        <span class="btn-text">Verify News</span>
+                        <span class="btn-icon">🔍</span>
+                    </button>
+                </div>
+                
+                <!-- Quick Examples -->
+                <div class="quick-examples">
+                    <span class="examples-label">Try these:</span>
+                    <button class="example-btn" onclick="setExample('COVID-19 vaccine effectiveness study')">
+                        COVID vaccine study
+                    </button>
+                    <button class="example-btn" onclick="setExample('Climate change causes global warming')">
+                        Climate change news
+                    </button>
+                    <button class="example-btn" onclick="setExample('New technology breakthrough announced')">
+                        Tech breakthrough
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results-section" id="results" style="display: none;">
+        <div class="results-container">
+            <div class="results-header">
+                <h2 id="resultsTitle">Verification Results</h2>
+                <div class="verification-badge" id="verificationBadge">
+                    <span class="badge-icon">⏳</span>
+                    <span class="badge-text">Analyzing...</span>
+                </div>
+            </div>
+            
+            <div class="results-content" id="resultsContent">
+                <!-- Dynamic content will be inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <h3>Analyzing with AI...</h3>
+            <p id="loadingText">Checking trusted news sources</p>
+            <div class="loading-steps">
+                <div class="step active" id="step1">📡 Fetching from APIs</div>
+                <div class="step" id="step2">🤖 AI Analysis</div>
+                <div class="step" id="step3">📝 Generating Summary</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/enhanced_app.js') }}"></script>
+</body>
+</html>

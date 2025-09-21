@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accurify - Accuracy + Verifying</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/enhanced.css') }}">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">Accurify</div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#tech">Get into Tech</a></li>
+                <li><a href="#" class="login-btn" onclick="showAuth()">Login / Signup</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span id="rotating-text">Accuracy + Verifying</span>
+            </h1>
+            <p class="hero-subtitle">AI-powered fact-checking at your fingertips</p>
+            
+            <!-- Main Chatbot Widget -->
+            <div class="chatbot-container">
+                <div class="chat-header">
+                    <div class="bot-avatar">🤖</div>
+                    <div class="bot-info">
+                        <h3>Accurify Assistant</h3>
+                        <span class="status">Online</span>
+                    </div>
+                </div>
+                
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message bot-message">
+                        <div class="message-content">
+                            Hi! I'm Accurify. Paste a news headline, link, or speak to verify information instantly.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="chat-input-container">
+                    <div class="input-wrapper">
+                        <input type="text" id="chatInput" placeholder="Enter news headline or paste link..." />
+                        <button class="voice-btn" id="voiceBtn">🎤</button>
+                        <button class="send-btn" id="sendBtn">Send</button>
+                    </div>
+                </div>
+                
+                <div class="example-queries">
+                    <p>Try these examples:</p>
+                    <div class="examples">
+                        <span class="example" onclick="sendExample(this)">COVID-19 vaccine causes autism</span>
+                        <span class="example" onclick="sendExample(this)">Malaysia GDP growth 2024</span>
+                        <span class="example" onclick="sendExample(this)">Climate change is a hoax</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>Why Choose Accurify?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Instant Verification</h3>
+                    <p>Get real-time fact-checking results in seconds</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>100+ Trusted Sources</h3>
+                    <p>Connected to global and Malaysian news APIs</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎙️</div>
+                    <h3>Voice + Chat Support</h3>
+                    <p>Type or speak - we understand both</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3>AI-Powered Analysis</h3>
+                    <p>Advanced ML models detect misinformation patterns</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="resources">
+        <div class="container">
+            <h2>Resources</h2>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <h3>Spotting Fake News</h3>
+                    <p>Learn to identify misinformation patterns</p>
+                </div>
+                <div class="resource-card">
+                    <h3>Media Literacy Guide</h3>
+                    <p>Essential skills for the digital age</p>
+                </div>
+                <div class="resource-card">
+                    <h3>Fact-Checking Tools</h3>
+                    <p>Professional verification resources</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get Into Tech Section -->
+    <section id="tech" class="tech-section">
+        <div class="container">
+            <h2>Get Into Tech</h2>
+            <p>Discover AI, chatbots, and fact-checking technology</p>
+            <div class="tech-opportunities">
+                <div class="opportunity">
+                    <h3>For Students</h3>
+                    <p>Learn AI and NLP technologies</p>
+                </div>
+                <div class="opportunity">
+                    <h3>For Media</h3>
+                    <p>Integrate our API into your platform</p>
+                </div>
+                <div class="opportunity">
+                    <h3>For Developers</h3>
+                    <p>Build with our open-source tools</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Accurify</h3>
+                    <p>Connected to 100+ trusted sources worldwide</p>
+                    <p>Thousands of users verifying daily</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#resources">Resources</a></li>
+                        <li><a href="#tech">Get into Tech</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Accurify. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Auth Modal -->
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAuth()">&times;</span>
+            <div class="auth-container">
+                <div class="auth-tabs">
+                    <button class="tab-btn active" onclick="showLogin()">Login</button>
+                    <button class="tab-btn" onclick="showSignup()">Sign Up</button>
+                </div>
+                
+                <div id="loginForm" class="auth-form">
+                    <h2>Welcome Back</h2>
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+                    <button class="auth-submit">Login</button>
+                </div>
+                
+                <div id="signupForm" class="auth-form hidden">
+                    <h2>Create Account</h2>
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+                    <button class="auth-submit">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accurify - News Verification Chatbot</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chatbot_style.css') }}">
+</head>
+<body class="dark-mode">
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo" onclick="goHome()" style="cursor: pointer;">
+                <span class="logo-icon">🎯</span>
+                <span class="logo-text">Accurify</span>
+            </div>
+            <div class="header-controls">
+                <button class="theme-toggle" id="themeToggle">
+                    <span class="theme-icon">☀️</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Chat Container -->
+    <main class="chat-container">
+        <!-- Welcome Message -->
+        <div class="welcome-section" id="welcomeSection">
+            <div class="welcome-content">
+                <div class="bot-avatar large">
+                    <span>🤖</span>
+                </div>
+                <h1 class="welcome-title">Accurify Assistant</h1>
+                <p class="welcome-subtitle">Your trusted companion for news verification and fact-checking. I'm here to help you navigate information with confidence and clarity.</p>
+                
+                <div class="quick-actions">
+                    <button class="action-btn" onclick="startChat('Verify this news headline')">
+                        <span class="action-icon">📰</span>
+                        <span>Verify News</span>
+                    </button>
+                    <button class="action-btn" onclick="startChat('Check if this is fake news')">
+                        <span class="action-icon">🔍</span>
+                        <span>Fact Check</span>
+                    </button>
+                    <button class="action-btn" onclick="startChat('Analyze this article')">
+                        <span class="action-icon">📊</span>
+                        <span>Analyze Article</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chat Messages -->
+        <div class="chat-messages" id="chatMessages" style="display: none;">
+            <!-- Messages will be dynamically added here -->
+        </div>
+
+        <!-- Chat Input -->
+        <div class="chat-input-container">
+            <div class="input-wrapper">
+                <textarea 
+                    id="messageInput" 
+                    placeholder="Enter news headline, paste article URL, or describe what you want to verify..."
+                    rows="1"
+                ></textarea>
+                <div class="input-actions">
+                    <button class="voice-btn" id="voiceBtn" title="Voice input">
+                        <span>🎤</span>
+                    </button>
+                    <button class="send-btn" id="sendBtn" title="Send message">
+                        <span>➤</span>
+                    </button>
+                </div>
+            </div>
+            <div class="input-footer">
+                <span class="powered-by">Powered by AI • Connected to 100+ trusted sources</span>
+            </div>
+        </div>
+    </main>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <div class="loading-text">
+                <h3>Analyzing with AI...</h3>
+                <p id="loadingStatus">Checking trusted news sources</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/chatbot_app.js') }}"></script>
+</body>
+</html>

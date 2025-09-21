@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accurify - Chat Interface</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        .full-chat-container { display: grid; grid-template-columns: 1fr 300px; height: 100vh; }
+        .chat-main { background: white; display: flex; flex-direction: column; }
+        .chat-sidebar { background: rgba(102,126,234,0.1); padding: 2rem; }
+        .full-chat-messages { flex: 1; overflow-y: auto; padding: 2rem; background: #f8f9fa; }
+        .analysis-panel { background: white; border-radius: 10px; padding: 1.5rem; margin-bottom: 1rem; }
+        .credibility-meter { background: #e0e0e0; height: 20px; border-radius: 10px; overflow: hidden; margin: 1rem 0; }
+        .credibility-fill { height: 100%; background: linear-gradient(90deg, #ff4757, #ffa502, #2ed573); transition: width 0.5s ease; }
+    </style>
+</head>
+<body>
+    <div class="full-chat-container">
+        <div class="chat-main">
+            <div class="chat-header">
+                <div class="bot-avatar">🤖</div>
+                <div class="bot-info">
+                    <h3>Accurify - Full Interface</h3>
+                    <span class="status">Connected to 100+ sources</span>
+                </div>
+                <a href="/" style="color: white; text-decoration: none; margin-left: auto;">← Back to Home</a>
+            </div>
+            
+            <div class="full-chat-messages" id="fullChatMessages">
+                <div class="message bot-message">
+                    <div class="message-content">
+                        Welcome to the full Accurify interface! I can verify news, analyze links, and provide detailed source information. What would you like to fact-check today?
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chat-input-container">
+                <div class="input-wrapper">
+                    <input type="text" id="fullChatInput" placeholder="Enter news headline, paste link, or ask a question..." />
+                    <button class="voice-btn" id="fullVoiceBtn">🎤</button>
+                    <button class="send-btn" id="fullSendBtn">Send</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="chat-sidebar">
+            <div class="analysis-panel">
+                <h3>📊 Analysis Panel</h3>
+                <div id="credibilityScore">
+                    <p>Credibility Score</p>
+                    <div class="credibility-meter">
+                        <div class="credibility-fill" style="width: 0%"></div>
+                    </div>
+                    <span id="scoreText">No analysis yet</span>
+                </div>
+            </div>
+            
+            <div class="analysis-panel">
+                <h4>Sources Checked</h4>
+                <div id="sourcesContainer">
+                    <p>Submit a query to see sources</p>
+                </div>
+            </div>
+            
+            <div class="analysis-panel">
+                <h4>ML Analysis</h4>
+                <div id="mlAnalysis">
+                    <p>AI models will analyze your query</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <script>
+        // Full chat interface specific functionality
+        const fullChatInput = document.getElementById('fullChatInput');
+        const fullSendBtn = document.getElementById('fullSendBtn');
+        const fullChatMessages = document.getElementById('fullChatMessages');
+        
+        // Override chat messages container
+        window.chatMessages = fullChatMessages;
+        
+        function updateSidebar(result) {
+            // Update credibility score
+            const score = result.credibility_score || 0;
+            const credibilityFill = document.querySelector('.credibility-fill');
+            const scoreText = document.getElementById('scoreText');
+            
+            credibilityFill.style.width = (score * 10) + '%';
+            scoreText.textContent = `${score}/10 (${result.confidence || 'unknown'})`;
+            
+            // Update sources
+            const sourcesContainer = document.getElementById('sourcesContainer');
+            if (result.sources && result.sources.length > 0) {
+                sourcesContainer.innerHTML = result.sources.map(source => 
+                    `<div style="margin-bottom: 0.5rem; padding: 0.5rem; background: rgba(0,0,0,0.05); border-radius: 5px;">
+                        <strong>${source.name}</strong><br>
+                        <small>Credibility: ${source.credibility}/10</small>
+                    </div>`
+                ).join('');
+            }
+            
+            // Update ML analysis
+            const mlAnalysis = document.getElementById('mlAnalysis');
+            if (result.ml_analysis) {
+                const ml = result.ml_analysis;
+                mlAnalysis.innerHTML = `
+                    <div style="font-size: 0.9rem;">
+                        <strong>Prediction:</strong> ${ml.prediction || 'N/A'}<br>
+                        <strong>Confidence:</strong> ${Math.round((ml.confidence || 0) * 100)}%<br>
+                        <strong>Models:</strong> ${ml.models_used ? ml.models_used.join(', ') : 'N/A'}
+                    </div>
+                `;
+            }
+        }
+        
+        // Event listeners for full interface
+        fullSendBtn.addEventListener('click', () => {
+            const message = fullChatInput.value.trim();
+            if (message) {
+                sendMessageToAPI(message);
+                fullChatInput.value = '';
+            }
+        });
+        
+        fullChatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                const message = fullChatInput.value.trim();
+                if (message) {
+                    sendMessageToAPI(message);
+                    fullChatInput.value = '';
+                }
+            }
+        });
+        
+        async function sendMessageToAPI(message) {
+            // Add user message
+            addMessage(message, 'user');
+            
+            // Show typing indicator
+            showTypingIndicator();
+            
+            try {
+                const response = await fetch('/api/verify', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ query: message })
+                });
+                
+                const result = await response.json();
+                
+                // Hide typing indicator
+                hideTypingIndicator();
+                
+                // Add bot response
+                addVerificationResult(result);
+                
+                // Update sidebar
+                updateSidebar(result);
+                
+            } catch (error) {
+                hideTypingIndicator();
+                addMessage('❌ Sorry, I encountered an error. Please try again.', 'bot');
+                console.error('API Error:', error);
+            }
+        }
+    </script>
+</body>
+</html>
