@@ -284,4 +284,4 @@ certificates/
 data/raw/
 data/processed/
 cache/
-outputs/
+outputs/.env
