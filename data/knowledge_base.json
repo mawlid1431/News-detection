@@ -1,0 +1,155 @@
+{
+  "verified_topics": {
+    "analyze this article": {
+      "score": 8.8,
+      "explanation": "Verified through 15 sources with high confidence.",
+      "summary": "Found 15 articles about 'Analyze this article'. Latest: Everything announced at Apple\u2019s iPhone 17 event...",
+      "sources": [
+        {
+          "title": "Everything announced at Apple\u2019s iPhone 17 event",
+          "url": "https://www.theverge.com/news/772434/apple-iphone-17-event-news",
+          "source": "The Verge",
+          "published_at": "2025-09-09T16:07:12Z"
+        },
+        {
+          "title": "Connecticut Man\u2019s Case Believed to Be First Murder-Suicide Associated With AI Psychosis",
+          "url": "https://gizmodo.com/connecticut-mans-case-believed-to-be-first-murder-suicide-associated-with-ai-psychosis-2000650497",
+          "source": "Gizmodo.com",
+          "published_at": "2025-08-29T16:35:48Z"
+        },
+        {
+          "title": "Hypertension Alerts Coming to Older Apple Watch Models",
+          "url": "https://www.macrumors.com/2025/09/09/hypertension-alerts-older-apple-watch-models/",
+          "source": "MacRumors",
+          "published_at": "2025-09-09T19:32:52Z"
+        },
+        {
+          "title": "Why Is This Hard?",
+          "url": "https://programmersstone.blog/posts/why-is-this-hard/",
+          "source": "Programmersstone.blog",
+          "published_at": "2025-08-20T12:47:06Z"
+        },
+        {
+          "title": "Income Equality in Nordic Countries: Myths, Facts, and Lessons",
+          "url": "https://www.aeaweb.org/articles?id=10.1257/jel.20251636",
+          "source": "Aeaweb.org",
+          "published_at": "2025-08-29T18:03:33Z"
+        }
+      ],
+      "learned_at": "2025-09-21T09:00:49.639682"
+    }
+  },
+  "fake_topics": {
+    "live: israel kills 46 in gaza since dawn, child dies of malnutrition": {
+      "score": 3.0,
+      "explanation": "Could not verify through trusted sources.",
+      "summary": "No verified information found about 'LIVE: Israel kills 46 in Gaza since dawn, child dies of malnutrition' in trusted sources.",
+      "learned_at": "2025-09-21T10:19:04.722083"
+    }
+  },
+  "learning_data": [
+    {
+      "query": "Analyze this article",
+      "result": {
+        "query": "Analyze this article",
+        "status": "verified",
+        "credibility_score": 8.8,
+        "confidence": "high",
+        "explanation": "Verified through 15 sources with high confidence.",
+        "summary": "Found 15 articles about 'Analyze this article'. Latest: Everything announced at Apple\u2019s iPhone 17 event...",
+        "official_sources": [
+          {
+            "title": "Everything announced at Apple\u2019s iPhone 17 event",
+            "url": "https://www.theverge.com/news/772434/apple-iphone-17-event-news",
+            "source": "The Verge",
+            "published_at": "2025-09-09T16:07:12Z"
+          },
+          {
+            "title": "Connecticut Man\u2019s Case Believed to Be First Murder-Suicide Associated With AI Psychosis",
+            "url": "https://gizmodo.com/connecticut-mans-case-believed-to-be-first-murder-suicide-associated-with-ai-psychosis-2000650497",
+            "source": "Gizmodo.com",
+            "published_at": "2025-08-29T16:35:48Z"
+          },
+          {
+            "title": "Hypertension Alerts Coming to Older Apple Watch Models",
+            "url": "https://www.macrumors.com/2025/09/09/hypertension-alerts-older-apple-watch-models/",
+            "source": "MacRumors",
+            "published_at": "2025-09-09T19:32:52Z"
+          },
+          {
+            "title": "Why Is This Hard?",
+            "url": "https://programmersstone.blog/posts/why-is-this-hard/",
+            "source": "Programmersstone.blog",
+            "published_at": "2025-08-20T12:47:06Z"
+          },
+          {
+            "title": "Income Equality in Nordic Countries: Myths, Facts, and Lessons",
+            "url": "https://www.aeaweb.org/articles?id=10.1257/jel.20251636",
+            "source": "Aeaweb.org",
+            "published_at": "2025-08-29T18:03:33Z"
+          }
+        ],
+        "sources_found": 15,
+        "pattern_score": 0.0,
+        "content_score": 0.4197333333333333
+      },
+      "timestamp": "2025-09-21T09:00:49.639682",
+      "sources_count": 15
+    },
+    {
+      "query": "LIVE: Israel kills 46 in Gaza since dawn, child dies of malnutrition",
+      "result": {
+        "query": "LIVE: Israel kills 46 in Gaza since dawn, child dies of malnutrition",
+        "status": "unverified",
+        "credibility_score": 3.0,
+        "confidence": "medium",
+        "explanation": "Could not verify through trusted sources.",
+        "summary": "No verified information found about 'LIVE: Israel kills 46 in Gaza since dawn, child dies of malnutrition' in trusted sources.",
+        "official_sources": [],
+        "sources_found": 0,
+        "pattern_score": 0.0,
+        "content_score": 0.0,
+        "processing_time_ms": 5491,
+        "timestamp": "2025-09-21T10:19:04.740174"
+      },
+      "timestamp": "2025-09-21T10:19:04.722083",
+      "sources_count": 0
+    },
+    {
+      "query": "Starmer set to announce recognition of Palestinian state today",
+      "result": {
+        "query": "Starmer set to announce recognition of Palestinian state today",
+        "status": "partially-verified",
+        "credibility_score": 6.8,
+        "confidence": "medium",
+        "explanation": "Partially verified through 3 sources.",
+        "summary": "Found 3 articles about 'Starmer set to announce recognition of Palestinian state today'. Latest: Gaza could be 'real estate bonanza', Israeli minister says...",
+        "official_sources": [
+          {
+            "title": "Gaza could be 'real estate bonanza', Israeli minister says",
+            "url": "https://news.sky.com/story/gaza-could-be-real-estate-bonanza-israeli-minister-bezalel-smotrich-says-13433205",
+            "source": "Sky.com",
+            "published_at": "2025-09-18T08:00:00Z"
+          },
+          {
+            "title": "The \u2018illegal\u2019 plan to get Ukraine into the EU",
+            "url": "https://www.euractiv.com/section/politics/news/the-illegal-plan-to-get-ukraine-into-the-eu/",
+            "source": "EURACTIV",
+            "published_at": "2025-09-03T05:25:03Z"
+          },
+          {
+            "title": "Will Corbyn allow Zionists to sabotage him again?",
+            "url": "https://electronicintifada.net/content/will-corbyn-allow-zionists-sabotage-him-again/50914",
+            "source": "Electronicintifada.net",
+            "published_at": "2025-09-06T10:46:09Z"
+          }
+        ],
+        "sources_found": 3,
+        "pattern_score": 0.0,
+        "content_score": 0.4396
+      },
+      "timestamp": "2025-09-21T10:20:39.423007",
+      "sources_count": 3
+    }
+  ]
+}

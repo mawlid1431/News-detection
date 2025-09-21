@@ -1,4 +1,4 @@
-# 🌐 **Trustify AI - REST API Documentation**
+# 🌐 **Accurify.AI - REST API Documentation**
 
 ### _Complete API Reference with Testing Examples_
 
@@ -6,7 +6,7 @@
 
 ## 📋 **API Overview**
 
-Trustify AI provides a comprehensive RESTful API for news verification services. The API is designed to be simple, reliable, and fast, enabling real-time fact-checking with detailed response information.
+Accurify.AI provides a comprehensive RESTful API for news verification services. The API is designed to be simple, reliable, and fast, enabling real-time fact-checking with detailed response information.
 
 **Base URL**: `http://localhost:5000` (Development) | `https://your-domain.com` (Production)
 
@@ -727,7 +727,7 @@ Currently, no rate limiting is implemented, but for production deployment:
 import requests
 from typing import Dict, Any, Optional
 
-class TrustifyClient:
+class AccurifyClient:
     def __init__(self, base_url: str = "http://localhost:5000"):
         self.base_url = base_url
         self.session = requests.Session()
@@ -755,7 +755,7 @@ class TrustifyClient:
         return response.json()
 
 # Usage
-client = TrustifyClient()
+client = AccurifyClient()
 result = client.verify("Climate change is real")
 print(f"Credibility: {result['credibility_score']}/10")
 ```
@@ -765,7 +765,7 @@ print(f"Credibility: {result['credibility_score']}/10")
 ```javascript
 const axios = require("axios");
 
-class TrustifyClient {
+class AccurifyClient {
   constructor(baseUrl = "http://localhost:5000") {
     this.baseUrl = baseUrl;
     this.client = axios.create({
@@ -801,7 +801,7 @@ class TrustifyClient {
 }
 
 // Usage
-const client = new TrustifyClient();
+const client = new AccurifyClient();
 
 client
   .verify("Vaccines are safe")
@@ -815,7 +815,7 @@ client
 
 ---
 
-This comprehensive API documentation provides everything needed to integrate with and test the Trustify AI verification system. The API is designed to be developer-friendly while providing detailed information for accurate news verification.
+This comprehensive API documentation provides everything needed to integrate with and test the Accurify.AI verification system. The API is designed to be developer-friendly while providing detailed information for accurate news verification.
 
 **API Strengths:**
 

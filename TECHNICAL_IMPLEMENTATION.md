@@ -1,4 +1,4 @@
-# 🔧 **Trustify AI - Technical Implementation Guide**
+# 🔧 **Accurify.AI - Technical Implementation Guide**
 
 ### _Comprehensive Technology Stack & Implementation Details_
 
@@ -6,7 +6,7 @@
 
 ## 📋 **Technology Stack Overview**
 
-Trustify AI is built using a modern, full-stack technology stack carefully chosen for performance, scalability, and maintainability. Each technology serves a specific purpose in delivering a robust news verification system.
+Accurify.AI is built using a modern, full-stack technology stack carefully chosen for performance, scalability, and maintainability. Each technology serves a specific purpose in delivering a robust news verification system.
 
 ---
 
@@ -37,7 +37,7 @@ app = Flask(__name__,
 
 # Configuration
 app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'dev-key')
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///trustify.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///accurify.db'
 
 # Extensions
 CORS(app)  # Enable cross-origin requests
@@ -336,12 +336,12 @@ class Config:
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="AI-powered news verification system" />
-    <title>Trustify AI - Verify News with AI</title>
+    <title>Accurify.AI - Verify News with AI</title>
   </head>
   <body>
     <main role="main" class="chat-container">
       <section class="chat-header" aria-label="Application header">
-        <h1>Trustify AI</h1>
+        <h1>Accurify.AI</h1>
       </section>
 
       <section class="chat-messages" aria-live="polite" role="log">
@@ -439,7 +439,7 @@ class Config:
 
 ```javascript
 // Main Application Class
-class TrustifyApp {
+class AccurifyApp {
   constructor() {
     this.apiBaseUrl = "/api";
     this.isListening = false;
@@ -518,7 +518,7 @@ class TrustifyApp {
 
 // Initialize application
 document.addEventListener("DOMContentLoaded", () => {
-  new TrustifyApp();
+  new AccurifyApp();
 });
 ```
 

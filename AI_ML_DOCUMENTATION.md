@@ -1,4 +1,4 @@
-# 🤖 **Trustify AI - Machine Learning & AI Documentation**
+# 🤖 **Accurify.AI - Machine Learning & AI Documentation**
 
 ### _Comprehensive AI/ML Pipeline, Models, and Performance Analysis_
 
@@ -6,7 +6,7 @@
 
 ## 🎯 **AI/ML Overview**
 
-Trustify AI employs a sophisticated **multi-model ensemble approach** for fake news detection, combining traditional machine learning algorithms with modern transformer-based models to achieve high accuracy and robust performance across different types of misinformation.
+Accurify.AI employs a sophisticated **multi-model ensemble approach** for fake news detection, combining traditional machine learning algorithms with modern transformer-based models to achieve high accuracy and robust performance across different types of misinformation.
 
 ---
 
@@ -981,7 +981,7 @@ class ModelInterpreter:
 
 ---
 
-This comprehensive AI/ML documentation demonstrates the sophisticated machine learning pipeline that powers Trustify AI's news verification capabilities. The multi-model ensemble approach ensures robust and accurate detection of misinformation across various content types.
+This comprehensive AI/ML documentation demonstrates the sophisticated machine learning pipeline that powers Accurify.AI's news verification capabilities. The multi-model ensemble approach ensures robust and accurate detection of misinformation across various content types.
 
 **Key AI/ML Strengths:**
 
