@@ -31,15 +31,15 @@ Accurify.AI is a sophisticated, real-time misinformation detection system that c
 
 ### **Technology Stack**
 
-| Component | Technology | Purpose |
-|-----------|------------|---------|
-| **Backend Framework** | Flask 2.3.3 | REST API and web server |
-| **Frontend** | HTML5/CSS3/JavaScript | Responsive user interface |
-| **Database** | SQLite + SQLAlchemy | Data persistence and ORM |
-| **ML/AI** | scikit-learn, transformers, torch | Machine learning models |
-| **NLP** | NLTK, fuzzywuzzy | Text processing and analysis |
-| **Cloud Services** | AWS Bedrock | Advanced AI fact-checking |
-| **API Integration** | 8+ News APIs | Real-time news verification |
+| Component             | Technology                        | Purpose                      |
+| --------------------- | --------------------------------- | ---------------------------- |
+| **Backend Framework** | Flask 2.3.3                       | REST API and web server      |
+| **Frontend**          | HTML5/CSS3/JavaScript             | Responsive user interface    |
+| **Database**          | SQLite + SQLAlchemy               | Data persistence and ORM     |
+| **ML/AI**             | scikit-learn, transformers, torch | Machine learning models      |
+| **NLP**               | NLTK, fuzzywuzzy                  | Text processing and analysis |
+| **Cloud Services**    | AWS Bedrock                       | Advanced AI fact-checking    |
+| **API Integration**   | 8+ News APIs                      | Real-time news verification  |
 
 ### **Core Components**
 
@@ -77,6 +77,7 @@ Accurify.AI is a sophisticated, real-time misinformation detection system that c
 ## 🚀 **Quick Start Guide**
 
 ### **Prerequisites**
+
 - Python 3.8 or higher
 - pip (Python package manager)
 - Git (for cloning)
@@ -84,36 +85,41 @@ Accurify.AI is a sophisticated, real-time misinformation detection system that c
 ### **Installation & Setup**
 
 1. **Clone the Repository**
+
    ```bash
    git clone https://github.com/mawlid1431/News-detection.git
    cd News-detection
    ```
 
 2. **Create Virtual Environment**
+
    ```bash
    python -m venv venv
-   
+
    # Windows
    venv\Scripts\activate
-   
+
    # macOS/Linux
    source venv/bin/activate
    ```
 
 3. **Install Dependencies**
+
    ```bash
    pip install -r requirements.txt
    ```
 
 4. **Environment Configuration**
+
    ```bash
    # Copy the example environment file
    cp .env.example .env
-   
+
    # Edit .env with your API keys (see API Keys section)
    ```
 
 5. **Run the Application**
+
    ```bash
    python app.py
    ```
@@ -205,12 +211,12 @@ Accurify.AI/
 
 ### **Machine Learning Models**
 
-| Model Type | Algorithm | Purpose | Accuracy |
-|------------|-----------|---------|----------|
-| **Text Classification** | Support Vector Machine (SVM) | Primary fake news detection | ~89% |
-| **Ensemble Method** | Random Forest | Secondary classification | ~85% |
-| **Linear Model** | Logistic Regression | Fast baseline classification | ~82% |
-| **Deep Learning** | Transformer (RoBERTa) | Advanced NLP analysis | ~92% |
+| Model Type              | Algorithm                    | Purpose                      | Accuracy |
+| ----------------------- | ---------------------------- | ---------------------------- | -------- |
+| **Text Classification** | Support Vector Machine (SVM) | Primary fake news detection  | ~89%     |
+| **Ensemble Method**     | Random Forest                | Secondary classification     | ~85%     |
+| **Linear Model**        | Logistic Regression          | Fast baseline classification | ~82%     |
+| **Deep Learning**       | Transformer (RoBERTa)        | Advanced NLP analysis        | ~92%     |
 
 ### **Natural Language Processing**
 
@@ -232,16 +238,16 @@ Accurify.AI/
 
 ### **Integrated News APIs**
 
-| API | Type | Coverage | Daily Limit |
-|-----|------|----------|-------------|
-| **NewsAPI** | Primary | Global news | 1,000 requests |
-| **Currents API** | Real-time | Breaking news | 600 requests |
-| **GNews** | Aggregator | Multi-language | 100 requests |
-| **Guardian API** | Quality journalism | Trusted source | 500 requests |
-| **MediaStack** | Media monitoring | Global coverage | 500/month |
-| **The News API** | Alternative | Comprehensive | 150/day |
-| **World News API** | International | Global focus | 1,000/day |
-| **NewsData.io** | Real-time | Fresh content | 200/day |
+| API                | Type               | Coverage        | Daily Limit    |
+| ------------------ | ------------------ | --------------- | -------------- |
+| **NewsAPI**        | Primary            | Global news     | 1,000 requests |
+| **Currents API**   | Real-time          | Breaking news   | 600 requests   |
+| **GNews**          | Aggregator         | Multi-language  | 100 requests   |
+| **Guardian API**   | Quality journalism | Trusted source  | 500 requests   |
+| **MediaStack**     | Media monitoring   | Global coverage | 500/month      |
+| **The News API**   | Alternative        | Comprehensive   | 150/day        |
+| **World News API** | International      | Global focus    | 1,000/day      |
+| **NewsData.io**    | Real-time          | Fresh content   | 200/day        |
 
 ### **RSS Feed Sources**
 
@@ -258,23 +264,25 @@ Accurify.AI/
 
 ### **Core Endpoints**
 
-| Method | Endpoint | Description | Response |
-|--------|----------|-------------|----------|
-| `GET` | `/` | Main application page | HTML |
-| `GET` | `/chatbot` | Interactive chat interface | HTML |
-| `GET` | `/api/health` | System health check | JSON |
-| `POST` | `/api/verify` | News verification | JSON |
-| `GET` | `/api/sources` | Available news sources | JSON |
-| `GET` | `/api/models/status` | ML model status | JSON |
+| Method | Endpoint             | Description                | Response |
+| ------ | -------------------- | -------------------------- | -------- |
+| `GET`  | `/`                  | Main application page      | HTML     |
+| `GET`  | `/chatbot`           | Interactive chat interface | HTML     |
+| `GET`  | `/api/health`        | System health check        | JSON     |
+| `POST` | `/api/verify`        | News verification          | JSON     |
+| `GET`  | `/api/sources`       | Available news sources     | JSON     |
+| `GET`  | `/api/models/status` | ML model status            | JSON     |
 
 ### **Usage Examples**
 
 **Health Check:**
+
 ```bash
 curl http://localhost:5000/api/health
 ```
 
 **Verify News:**
+
 ```bash
 curl -X POST http://localhost:5000/api/verify \
   -H "Content-Type: application/json" \
@@ -282,6 +290,7 @@ curl -X POST http://localhost:5000/api/verify \
 ```
 
 **Response Format:**
+
 ```json
 {
   "query": "Scientists discover new COVID-19 treatment",
@@ -310,32 +319,33 @@ curl -X POST http://localhost:5000/api/verify \
 
 To use all features of Accurify.AI, you'll need API keys from these services:
 
-| Service | Purpose | Free Tier | Get API Key |
-|---------|---------|-----------|-------------|
-| **NewsAPI** | Primary news source | 1000/day | [newsapi.org](https://newsapi.org/register) |
-| **Currents API** | Alternative news source | 600/day | [currentsapi.services](https://currentsapi.services/) |
-| **GNews** | Global news coverage | 100/day | [gnews.io](https://gnews.io/) |
-| **Guardian** | Trusted journalism | 500/day | [Guardian Open Platform](https://open-platform.theguardian.com/) |
-| **MediaStack** | Media monitoring | 500/month | [mediastack.com](https://mediastack.com/) |
-| **AWS Bedrock** | AI fact-checking | Pay-per-use | [AWS Console](https://aws.amazon.com/bedrock/) |
-| **OpenAI** (Optional) | Enhanced AI analysis | Limited free | [OpenAI](https://platform.openai.com/) |
-| **Gemini** (Optional) | Google AI integration | Limited free | [Google AI Studio](https://makersuite.google.com/) |
+| Service               | Purpose                 | Free Tier    | Get API Key                                                      |
+| --------------------- | ----------------------- | ------------ | ---------------------------------------------------------------- |
+| **NewsAPI**           | Primary news source     | 1000/day     | [newsapi.org](https://newsapi.org/register)                      |
+| **Currents API**      | Alternative news source | 600/day      | [currentsapi.services](https://currentsapi.services/)            |
+| **GNews**             | Global news coverage    | 100/day      | [gnews.io](https://gnews.io/)                                    |
+| **Guardian**          | Trusted journalism      | 500/day      | [Guardian Open Platform](https://open-platform.theguardian.com/) |
+| **MediaStack**        | Media monitoring        | 500/month    | [mediastack.com](https://mediastack.com/)                        |
+| **AWS Bedrock**       | AI fact-checking        | Pay-per-use  | [AWS Console](https://aws.amazon.com/bedrock/)                   |
+| **OpenAI** (Optional) | Enhanced AI analysis    | Limited free | [OpenAI](https://platform.openai.com/)                           |
+| **Gemini** (Optional) | Google AI integration   | Limited free | [Google AI Studio](https://makersuite.google.com/)               |
 
 ### **Environment Setup**
 
 1. Copy `.env.example` to `.env`
 2. Add your API keys:
+
    ```env
    # Essential APIs
    NEWSAPI_KEY=your-newsapi-key
    CURRENTS_API_KEY=your-currents-key
    GNEWS_API_KEY=your-gnews-key
-   
+
    # AWS Configuration
    AWS_ACCESS_KEY_ID=your-aws-key
    AWS_SECRET_ACCESS_KEY=your-aws-secret
    AWS_DEFAULT_REGION=us-east-1
-   
+
    # Optional AI Services
    OPENAI_API_KEY=your-openai-key
    GEMINI_API_KEY=your-gemini-key
@@ -348,6 +358,7 @@ To use all features of Accurify.AI, you'll need API keys from these services:
 ### **Development Setup**
 
 1. **Development Mode:**
+
    ```bash
    export FLASK_ENV=development
    export FLASK_DEBUG=True
@@ -365,11 +376,13 @@ To use all features of Accurify.AI, you'll need API keys from these services:
 ### **Production Deployment**
 
 **Using Gunicorn:**
+
 ```bash
 gunicorn --bind 0.0.0.0:5000 app:app
 ```
 
 **Using Docker:**
+
 ```dockerfile
 FROM python:3.9-slim
 WORKDIR /app
@@ -381,6 +394,7 @@ CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:app"]
 ```
 
 **Cloud Deployment:**
+
 - AWS Elastic Beanstalk
 - Google Cloud Run
 - Heroku
@@ -391,12 +405,14 @@ CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:app"]
 ## 📈 **Performance & Monitoring**
 
 ### **Performance Metrics**
+
 - **Response Time**: < 2 seconds average
 - **Accuracy**: 89% overall classification accuracy
 - **Throughput**: 100+ requests per minute
 - **Uptime**: 99.9% availability target
 
 ### **Monitoring Features**
+
 - Real-time API health checks
 - Source availability monitoring
 - Model performance tracking
@@ -407,6 +423,7 @@ CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:app"]
 ## 🔒 **Security & Privacy**
 
 ### **Security Features**
+
 - Environment variable protection
 - API rate limiting
 - Input validation and sanitization
@@ -414,6 +431,7 @@ CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:app"]
 - Secure secret management
 
 ### **Privacy Considerations**
+
 - No personal data collection
 - Anonymous usage tracking
 - Secure API key handling
@@ -435,6 +453,7 @@ We welcome contributions to Accurify.AI! Here's how to get started:
 5. **Submit a Pull Request**
 
 ### **Contribution Guidelines**
+
 - Follow Python PEP 8 style guide
 - Add tests for new features
 - Update documentation
@@ -482,9 +501,10 @@ python app.py
 
 ---
 
-*Built with ❤️ for a more informed world*
+_Built with ❤️ for a more informed world_
 
 ### **Model Performance**
+
 - **SVM Accuracy**: ~92%
 - **Logistic Regression**: ~89%
 - **Random Forest**: ~87%
@@ -493,6 +513,7 @@ python app.py
 ## 📊 News Sources Integration
 
 ### **Supported APIs**
+
 - **GNews API** - Global news aggregation
 - **NewsAPI.org** - Comprehensive news database
 - **Currents API** - Real-time news feeds
@@ -500,13 +521,16 @@ python app.py
 - **RSS Feeds** - Direct source integration
 
 ### **Malaysian Sources**
+
 - **Bernama** - National news agency
 - **The Star** - Leading English daily
 - **New Straits Times** - Established newspaper
 - **Malay Mail** - Digital news platform
 
 ### **Source Configuration**
+
 Add your API keys to `.env` file:
+
 ```env
 GNEWS_API_KEY=your_gnews_key
 NEWSAPI_KEY=your_newsapi_key
@@ -517,11 +541,13 @@ CURRENTS_API_KEY=your_currents_key
 ## 🔍 Verification Engine
 
 ### **Three-Tier Classification**
+
 1. **Verified** (8-10/10): High confidence, multiple trusted sources
 2. **Partially Verified** (6-7/10): Some evidence, variations exist
 3. **Unverified** (0-5/10): No credible evidence found
 
 ### **Verification Process**
+
 1. **ML Classification**: Initial AI-based assessment
 2. **Source Search**: Query multiple news APIs/RSS feeds
 3. **Similarity Analysis**: Fuzzy matching with articles
@@ -535,6 +561,7 @@ CURRENTS_API_KEY=your_currents_key
 ## 🎯 Features
 
 ### **Core Functionality**
+
 - ✅ Real-time news verification
 - ✅ AI-powered classification
 - ✅ Multi-source fact-checking
@@ -544,6 +571,7 @@ CURRENTS_API_KEY=your_currents_key
 - ✅ Processing time tracking
 
 ### **User Interface**
+
 - ✅ Modern chatbot interface
 - ✅ Responsive mobile design
 - ✅ Voice recognition/synthesis
@@ -552,6 +580,7 @@ CURRENTS_API_KEY=your_currents_key
 - ✅ Smooth animations/transitions
 
 ### **Technical Features**
+
 - ✅ RESTful API architecture
 - ✅ Database persistence
 - ✅ Error handling/logging
@@ -562,25 +591,30 @@ CURRENTS_API_KEY=your_currents_key
 ## 🧪 Testing
 
 ### **Test Examples**
+
 Try these queries in the chatbot:
 
 **Fake News (Expected: Unverified)**
+
 - "COVID-19 vaccine causes autism"
 - "Climate change is a hoax"
 - "5G towers spread coronavirus"
 
 **Real News (Expected: Verified)**
+
 - "WHO recommends vaccination"
 - "Malaysia GDP growth 2024"
 - "Scientists confirm climate change"
 
 **Ambiguous (Expected: Partially Verified)**
+
 - Paste any news website URL
 - "Breaking news about [current topic]"
 
 ## 🚀 Deployment
 
 ### **Local Development**
+
 ```bash
 # Development mode
 export FLASK_ENV=development
@@ -589,6 +623,7 @@ python run.py
 ```
 
 ### **Production Deployment**
+
 ```bash
 # Production mode
 export FLASK_ENV=production
@@ -598,6 +633,7 @@ gunicorn -w 4 -b 0.0.0.0:5000 app:app
 ```
 
 ### **Docker Deployment**
+
 ```dockerfile
 FROM python:3.9-slim
 WORKDIR /app
@@ -630,12 +666,14 @@ CMD ["python", "run.py"]
 ## 🛠️ Development
 
 ### **Adding New Features**
+
 1. **Backend**: Add endpoints in `app.py`
 2. **ML Models**: Extend `ml_models.py`
 3. **News Sources**: Update `news_sources.py`
 4. **Frontend**: Modify templates and static files
 
 ### **Contributing**
+
 1. Fork the repository
 2. Create feature branch
 3. Make changes with tests
@@ -656,4 +694,4 @@ MIT License - see LICENSE file for details
 
 **🎉 Trustify AI - Verify to Trust AI** 🤖✅
 
-*Built with Python Flask, Machine Learning, and Modern Web Technologies*
+_Built with Python Flask, Machine Learning, and Modern Web Technologies_

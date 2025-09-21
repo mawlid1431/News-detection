@@ -11,7 +11,7 @@ This repository contains **SENSITIVE DATA** that must be handled carefully befor
 The following files contain **hardcoded API keys** that need to be removed:
 
 - `backend/smart_verification.py` - Line 22: NewsAPI key
-- `backend/simple_verification.py` - Line 16: NewsAPI key  
+- `backend/simple_verification.py` - Line 16: NewsAPI key
 - `backend/bedrock_integration.py` - Line 23: AWS Bedrock API key
 
 ### 2. Environment Variables File (.env)
@@ -29,30 +29,36 @@ AWS_SECRET_ACCESS_KEY=ABSKQmVkcm9ja0FQSUtleS00YTRxLWF0LTM4NTI0MDcyMTIzNzo3Y0VQRE
 ## ✅ SECURITY CHECKLIST BEFORE PUSHING TO GITHUB
 
 ### Step 1: Fix Hardcoded API Keys
+
 - [ ] Replace hardcoded API keys in Python files with `os.getenv()`
 - [ ] Ensure all files use environment variables from `.env`
 
 ### Step 2: Verify .gitignore Coverage
+
 - [ ] `.env` file is listed in `.gitignore` ✅
 - [ ] `instance/` directory (contains SQLite database) is ignored ✅
 - [ ] `__pycache__/` directories are ignored ✅
 
 ### Step 3: Environment Setup
+
 - [ ] Create `.env.example` file with dummy values
 - [ ] Document environment variable requirements in README
 
 ### Step 4: Database Security
+
 - [ ] Ensure `instance/trustify.db` is not committed (contains user data)
 - [ ] Verify database credentials are in environment variables
 
 ## 🔧 HOW TO FIX HARDCODED API KEYS
 
 ### Replace this pattern:
+
 ```python
 self.newsapi_key = "ebe74bd45e474f518aa0e4e826a9c086"  # ❌ NEVER DO THIS
 ```
 
 ### With this pattern:
+
 ```python
 import os
 from dotenv import load_dotenv
@@ -64,10 +70,11 @@ self.newsapi_key = os.getenv('NEWSAPI_KEY')  # ✅ SECURE
 ## 📝 RECOMMENDED WORKFLOW
 
 1. **Before First Push:**
+
    ```bash
    # Check what files would be committed
    git status
-   
+
    # Ensure .env is not listed (should be ignored)
    # If .env appears, add it to .gitignore
    ```
@@ -126,6 +133,7 @@ If any API keys have been exposed:
 ## 🚀 DEPLOYMENT CONSIDERATIONS
 
 For production deployment:
+
 - Use cloud provider secret management (AWS Secrets Manager, Azure Key Vault, etc.)
 - Set environment variables in your deployment platform
 - Never store secrets in container images
